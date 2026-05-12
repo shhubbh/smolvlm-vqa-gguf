@@ -35,9 +35,9 @@ CHECKPOINT_EVERY_STEPS = 25
 CHECKPOINT_EVERY_SECONDS = 60 * 60
 
 MEMORY_GUARD_GB = 12.0
-DISK_GUARD_FREE_GB = 5.0
+DISK_GUARD_FREE_GB = 3.0
 PREFLIGHT_FREE_RAM_GB = 4.0
-PREFLIGHT_FREE_DISK_GB = 25.0
+PREFLIGHT_FREE_DISK_GB = 10.0
 
 # Stretch: add a 4th variant (base-q4_k_m) for a clean 2x2 grid.
 VARIANTS = ("base-f16", "finetuned-q8_0", "finetuned-q4_k_m")
