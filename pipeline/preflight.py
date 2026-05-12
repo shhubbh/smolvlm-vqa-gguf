@@ -175,7 +175,11 @@ def run_smoke_forward() -> tuple[bool, str]:
         {"role": "assistant", "content": [{"type": "text", "text": "Gray square."}]},
     ]
     text = processor.apply_chat_template(messages, add_generation_prompt=False)
-    inputs = processor(text=text, images=[image], return_tensors="pt")
+    max_side = getattr(processor.image_processor, "max_image_size", None)
+    if isinstance(max_side, dict):
+        max_side = max_side.get("longest_edge")
+    extra = {"size": {"longest_edge": max_side}} if isinstance(max_side, int) else {}
+    inputs = processor(text=text, images=[image], return_tensors="pt", **extra)
     labels = inputs.input_ids.clone()
     pad = processor.tokenizer.pad_token_id
     if pad is not None:
