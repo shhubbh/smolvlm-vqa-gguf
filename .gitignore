@@ -1,0 +1,30 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+.env
+
+data/processed/
+data/raw/
+models/
+runs/
+results/*.csv
+results/*.md
+
+# llama.cpp clone + build artifacts
+convert/llama.cpp/
+convert/bin/
+
+# HF cache when colocated
+.cache/
+.hf_cache/
+
+# editor
+.vscode/
+.idea/
+*.swp
+
+# do not gitignore .gitkeep
+!.gitkeep
