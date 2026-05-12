@@ -15,6 +15,7 @@ from pathlib import Path
 DEVICE = "cpu"
 os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
 os.environ.setdefault("HF_HUB_ENABLE_HF_TRANSFER", "1")
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common.config import (
     DATASET_ID,

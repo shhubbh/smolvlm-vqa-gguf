@@ -11,6 +11,7 @@ from pathlib import Path
 
 DEVICE = "cpu"
 os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common.config import (
     DEFAULT_TEST_SAMPLES,

@@ -14,6 +14,7 @@ from pathlib import Path
 
 DEVICE = "cpu"
 os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common.config import PATHS
 from common.logging_setup import setup_logging
