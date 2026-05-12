@@ -59,6 +59,7 @@ def cmake_flags(native: bool) -> list[str]:
     flags = [
         "-DGGML_CUDA=OFF",
         "-DGGML_BLAS=OFF",
+        "-DLLAMA_CURL=OFF",
         "-DLLAMA_BUILD_TESTS=OFF",
         "-DLLAMA_BUILD_EXAMPLES=ON",
         "-DLLAMA_BUILD_SERVER=ON",
